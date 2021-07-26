@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateScoreLabel()
         stopButton.isHidden = true
         clearButton.isHidden = true
         
@@ -31,8 +32,7 @@ class ViewController: UIViewController {
         clearButton.layer.borderWidth = 3
         clearButton.layer.cornerRadius = 15
         
-    
-
+        
     }
     @objc func timerTick() {
         timerScore += timerStep
@@ -41,6 +41,13 @@ class ViewController: UIViewController {
     
     func updateScoreLabel() {
         scoreLabel.text = "\(timerScore)"
+        if timerScore >= 10 {
+            view.backgroundColor = UIColor.systemGreen
+        } else if timerScore <= -10 {
+            view.backgroundColor = UIColor.systemRed
+            } else {
+            view.backgroundColor = UIColor.white
+        }
     }
 
     @IBAction func startButtonDidPressed(_ sender: Any) {
