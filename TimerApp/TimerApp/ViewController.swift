@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     var timerScore = 0
     var timerStep = 1
     var timer: Timer?
+    var actionTimer: Timer?
+    let gifImg = ["1", "2", "3"]
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
         updateScoreLabel()
         stopButton.isHidden = true
         clearButton.isHidden = true
+        ImageView.isHidden = true
         
         stopButton.layer.borderWidth = 3
         stopButton.layer.cornerRadius = 10
@@ -33,11 +37,20 @@ class ViewController: UIViewController {
         clearButton.layer.borderWidth = 3
         clearButton.layer.cornerRadius = 15
         
-        
     }
+    
     @objc func timerTick() {
         timerScore += timerStep
         updateScoreLabel()
+    }
+    
+    @objc func actionTick() {
+        ImageView.image = UIImage(named: gifImg[currentIndex])
+        currentIndex += 1
+        
+        if currentIndex >= gifImg.count {
+            currentIndex = 0
+        }
     }
     
     func updateScoreLabel() {
@@ -57,6 +70,9 @@ class ViewController: UIViewController {
         startButton.isHidden = true
         stopButton.isHidden = false
         clearButton.isHidden = false
+        ImageView.isHidden = false
+        
+        actionTimer = Timer.scheduledTimer(timeInterval: 0.3333, target: self, selector: #selector(actionTick), userInfo: nil, repeats: true)
     }
     
     @IBAction func stopButtonDidPressed(_ sender: Any) {
@@ -64,6 +80,7 @@ class ViewController: UIViewController {
         timer = nil
         stopButton.isHidden = true
         startButton.isHidden = false
+        ImageView.isHidden = true
     }
     
     @IBAction func clearButtonDidPressed(_ sender: Any) {
