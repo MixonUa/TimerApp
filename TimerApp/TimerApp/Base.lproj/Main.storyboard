@@ -74,16 +74,17 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-V1-pBo">
-                                <rect key="frame" x="68" y="164" width="270" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC3-V1-pBo">
+                                <rect key="frame" x="72" y="123" width="270" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ILD-pt-3He"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dd-RK-Syk">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dd-RK-Syk">
                                 <rect key="frame" x="170" y="432" width="75" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="  clear  "/>
@@ -91,17 +92,34 @@
                                     <action selector="clearButtonDidPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bO5-QZ-tnT"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="yy9-Om-lMz">
+                                <rect key="frame" x="157" y="210" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="6Ge-ik-wNo"/>
+                                    <constraint firstAttribute="height" constant="50" id="YRV-24-ggZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hQe-ut-Ngs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Lo-h9-DLT"/>
+                            <constraint firstItem="IC3-V1-pBo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="BSn-dH-orU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yy9-Om-lMz" secondAttribute="trailing" constant="157" id="Fa6-jX-a5g"/>
+                            <constraint firstItem="7dd-RK-Syk" firstAttribute="top" secondItem="hQe-ut-Ngs" secondAttribute="bottom" constant="40" id="FbM-X0-aHR"/>
+                            <constraint firstItem="yy9-Om-lMz" firstAttribute="top" secondItem="IC3-V1-pBo" secondAttribute="bottom" constant="37" id="Juc-Kc-qqI"/>
                             <constraint firstItem="hQe-ut-Ngs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="P2m-pH-hzc"/>
+                            <constraint firstItem="IC3-V1-pBo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="SCJ-ay-DnZ"/>
+                            <constraint firstItem="IC3-V1-pBo" firstAttribute="centerX" secondItem="7dd-RK-Syk" secondAttribute="centerX" id="Sof-5K-RoD"/>
                             <constraint firstItem="SHb-AT-yv9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XSO-b7-dpd"/>
+                            <constraint firstItem="yy9-Om-lMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="cqT-Og-tUh"/>
+                            <constraint firstItem="IC3-V1-pBo" firstAttribute="centerX" secondItem="yy9-Om-lMz" secondAttribute="centerX" id="doh-hz-s6Q"/>
                             <constraint firstItem="SHb-AT-yv9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="250" id="rVN-5d-eD7"/>
+                            <constraint firstItem="7dd-RK-Syk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="170" id="z5s-8e-cFv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ImageView" destination="yy9-Om-lMz" id="Euk-MR-hJ0"/>
                         <outlet property="clearButton" destination="7dd-RK-Syk" id="xKE-RI-6Vo"/>
                         <outlet property="directionSwitch" destination="tXM-B5-AmD" id="EP6-e7-Jrb"/>
                         <outlet property="directionSwitchedLabel" destination="Icu-ow-k35" id="9uA-Qu-Sb3"/>
@@ -116,6 +134,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="300" height="150"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

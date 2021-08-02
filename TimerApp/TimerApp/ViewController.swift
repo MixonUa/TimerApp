@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var directionSwitch: UISwitch!
     @IBOutlet weak var directionSwitchedLabel: UILabel!
+    @IBOutlet weak var ImageView: UIImageView!
     var timerScore = 0
     var timerStep = 1
     var timer: Timer?
