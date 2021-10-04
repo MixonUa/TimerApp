@@ -94,6 +94,9 @@ class ViewController: UIViewController {
         ImageView.image = UIImage(named: gifImg[currentIndex])
     }
     
+    @IBAction func backToRootController (_ sender: UIStoryboardSegue) {
+        
+    }
     @IBAction func switchChanged(_ sender: Any) {
         timerStep = timerStep * (-1)
         

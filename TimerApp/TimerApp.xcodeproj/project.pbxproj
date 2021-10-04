@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		934F2BFD270AF283007FAD08 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934F2BFC270AF283007FAD08 /* SecondViewController.swift */; };
 		936960B426AAB7A6000BAB22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936960B326AAB7A6000BAB22 /* AppDelegate.swift */; };
 		936960B626AAB7A6000BAB22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936960B526AAB7A6000BAB22 /* SceneDelegate.swift */; };
 		936960B826AAB7A6000BAB22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936960B726AAB7A6000BAB22 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		934F2BFC270AF283007FAD08 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		936960B026AAB7A6000BAB22 /* TimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936960B326AAB7A6000BAB22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936960B526AAB7A6000BAB22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				936960BC26AAB7A7000BAB22 /* Assets.xcassets */,
 				936960BE26AAB7A7000BAB22 /* LaunchScreen.storyboard */,
 				936960C126AAB7A7000BAB22 /* Info.plist */,
+				934F2BFC270AF283007FAD08 /* SecondViewController.swift */,
 			);
 			path = TimerApp;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934F2BFD270AF283007FAD08 /* SecondViewController.swift in Sources */,
 				936960B826AAB7A6000BAB22 /* ViewController.swift in Sources */,
 				936960B426AAB7A6000BAB22 /* AppDelegate.swift in Sources */,
 				936960B626AAB7A6000BAB22 /* SceneDelegate.swift in Sources */,
