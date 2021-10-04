@@ -57,10 +57,13 @@ class ViewController: UIViewController {
         scoreLabel.text = "\(timerScore)"
         if timerScore >= 10 {
             view.backgroundColor = UIColor.systemGreen
+            ImageView.backgroundColor = UIColor.systemGreen
         } else if timerScore <= -10 {
             view.backgroundColor = UIColor.systemRed
+            ImageView.backgroundColor = UIColor.systemRed
             } else {
             view.backgroundColor = UIColor.white
+                ImageView.backgroundColor = UIColor.white
         }
     }
 
@@ -72,11 +75,12 @@ class ViewController: UIViewController {
         clearButton.isHidden = false
         ImageView.isHidden = false
         
-        actionTimer = Timer.scheduledTimer(timeInterval: 0.3333, target: self, selector: #selector(actionTick), userInfo: nil, repeats: true)
+        actionTimer = Timer.scheduledTimer(timeInterval: 0.334, target: self, selector: #selector(actionTick), userInfo: nil, repeats: true)
     }
     
     @IBAction func stopButtonDidPressed(_ sender: Any) {
         timer?.invalidate()
+        actionTimer?.invalidate()
         timer = nil
         stopButton.isHidden = true
         startButton.isHidden = false
@@ -86,8 +90,13 @@ class ViewController: UIViewController {
     @IBAction func clearButtonDidPressed(_ sender: Any) {
         timerScore = 0
         updateScoreLabel()
+        currentIndex = 0
+        ImageView.image = UIImage(named: gifImg[currentIndex])
     }
     
+    @IBAction func backToRootController (_ sender: UIStoryboardSegue) {
+        
+    }
     @IBAction func switchChanged(_ sender: Any) {
         timerStep = timerStep * (-1)
         
@@ -97,6 +106,9 @@ class ViewController: UIViewController {
             directionSwitchedLabel.text = " - "
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? SecondViewController else { return }
+        destVC.timerValue = timerScore
+    }
 }
 
