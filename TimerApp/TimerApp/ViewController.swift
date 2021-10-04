@@ -106,6 +106,9 @@ class ViewController: UIViewController {
             directionSwitchedLabel.text = " - "
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? SecondViewController else { return }
+        destVC.timerValue = timerScore
+    }
 }
 

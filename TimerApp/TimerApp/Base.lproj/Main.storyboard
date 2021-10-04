@@ -181,7 +181,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vhf-E1-Spw"/>
                     <connections>
-                        <outlet property="ScoreLabel" destination="Bfh-sp-hac" id="loM-Ig-ktv"/>
+                        <outlet property="scoreLabel" destination="Bfh-sp-hac" id="SsJ-fe-Ye2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIj-dm-JsX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

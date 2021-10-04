@@ -8,11 +8,16 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-    @IBOutlet weak var ScoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    var timerValue: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let value = timerValue {
+            scoreLabel.text = "\(value)"
+        } else {
+            scoreLabel.text = "0"
+        }
         // Do any additional setup after loading the view.
     }
     
